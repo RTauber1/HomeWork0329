@@ -1,0 +1,22 @@
+﻿@using HomeWork0329.Data
+@model MyAccountViewModel
+
+<div class="container">
+    <main role="main" class="pb-3" style="margin-top: 70px;">
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                @foreach (Posts p in Model.UsersPosts)
+                {
+                <div class="jumbotron">
+                    <h5>@p.Title</h5>
+                    <h5>Phone Number: @p.PhoneNumber</h5>
+                    <h3>Description: </h3>
+                    <PRE>@p.Description</PRE>
+                    <a class="btn-danger" href="/Home/Erase?Id=@p.Id">Erase</a>
+                </div>
+                }
+            </div>
+        </div>
+    </main>
+</div>
